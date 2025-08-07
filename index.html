@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click the Moving Target</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="header">
+            <h1>Click the Moving Target</h1>
+            <div class="stats">
+                <div class="stat">
+                    <label>Score:</label>
+                    <span id="score">0</span>
+                </div>
+                <div class="stat">
+                    <label>Time:</label>
+                    <span id="time">30</span>s
+                </div>
+                <div class="stat">
+                    <label>Level:</label>
+                    <span id="level">1</span>
+                </div>
+                <div class="stat">
+                    <label>Accuracy:</label>
+                    <span id="accuracy">100</span>%
+                </div>
+            </div>
+        </header>
+
+        <div class="game-area" id="gameArea">
+            <div class="start-screen" id="startScreen">
+                <h2>Ready to Test Your Reflexes?</h2>
+                <p>Click the moving targets to score points!</p>
+                <div class="difficulty-selector">
+                    <h3>Select Difficulty:</h3>
+                    <button class="difficulty-btn" data-difficulty="easy">Easy</button>
+                    <button class="difficulty-btn active" data-difficulty="medium">Medium</button>
+                    <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+                </div>
+                <button class="start-btn" id="startBtn">Start Game</button>
+            </div>
+
+            <div class="game-screen hidden" id="gameScreen">
+                <div class="game-info">
+                    <div class="combo-display" id="comboDisplay">Combo: x1</div>
+                    <div class="power-ups">
+                        <div class="power-up" id="slowMotion">
+                            <span>⏱️</span>
+                            <div class="cooldown-bar"></div>
+                        </div>
+                        <div class="power-up" id="multiShot">
+                            <span>🎯</span>
+                            <div class="cooldown-bar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="targets-container" id="targetsContainer"></div>
+            </div>
+
+            <div class="game-over-screen hidden" id="gameOverScreen">
+                <h2>Game Over!</h2>
+                <div class="final-stats">
+                    <div class="final-stat">
+                        <label>Final Score:</label>
+                        <span id="finalScore">0</span>
+                    </div>
+                    <div class="final-stat">
+                        <label>Targets Hit:</label>
+                        <span id="targetsHit">0</span>
+                    </div>
+                    <div class="final-stat">
+                        <label>Final Accuracy:</label>
+                        <span id="finalAccuracy">0</span>%
+                    </div>
+                    <div class="final-stat">
+                        <label>Max Combo:</label>
+                        <span id="maxCombo">0</span>
+                    </div>
+                </div>
+                <div class="performance-rating" id="performanceRating">
+                    <span class="rating-text">Good Job!</span>
+                </div>
+                <button class="restart-btn" id="restartBtn">Play Again</button>
+            </div>
+        </div>
+
+        <div class="controls-info">
+            <h3>Controls:</h3>
+            <p>• Click targets to score points</p>
+            <p>• Hit consecutive targets for combo multiplier</p>
+            <p>• Use power-ups: Slow Motion (S) & Multi-Shot (D)</p>
+            <p>• Avoid clicking empty space to maintain accuracy</p>
+        </div>
+    </div>
+
+    <script src="target.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
